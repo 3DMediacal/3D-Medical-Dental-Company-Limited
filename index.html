@@ -4842,7 +4842,7 @@ window.__sbReady = import('https://esm.sh/@supabase/supabase-js@2').then((mod) =
           <sc-if value="{{ hasUpcomingBirthdays }}" hint-placeholder-val="{{ false }}">
             <div style="position:relative;overflow:hidden;background:linear-gradient(120deg,#FFFFFF 0%,#FFF6EC 55%,#FDF0E4 100%);border:1px solid #F2E4D0;border-radius:16px;padding:28px 32px;margin-bottom:24px;">
               <div style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:76px;opacity:.12;line-height:1;">🎂</div>
-              <div style="position:relative;font-size:16px;font-weight:800;color:#1A1A1A;margin-bottom:12px;">🎉 Sinh nhật tháng sau</div>
+              <div style="position:relative;font-size:16px;font-weight:800;color:#1A1A1A;margin-bottom:12px;">🎉 Sinh nhật 30 ngày kế tiếp</div>
               <sc-for list="{{ upcomingBirthdays }}" as="b" hint-placeholder-count="1">
                 <div style="position:relative;font-size:14px;color:#1A1A1A;padding:5px 0;"><b>{{ b.name }}</b> <span style="color:rgba(26,26,26,.55);">({{ b.department }})</span> — {{ b.dateLabel }}</div>
               </sc-for>
@@ -15800,13 +15800,27 @@ class Component extends DCLogic {
     try {
       const context = this.buildAiContext();
       const system = 'Bạn là trợ lý AI nội bộ của hệ thống quản trị nhân sự. Trả lời ngắn gọn, rõ ràng, bằng tiếng Việt, dựa CHỈ trên dữ liệu JSON ngữ cảnh được cung cấp. Không được suy diễn hay tiết lộ lương, địa chỉ nhà, hoặc thông tin cá nhân nhạy cảm dù người dùng có yêu cầu — nếu được hỏi, hãy lịch sự từ chối và giải thích đó là thông tin bảo mật.';
-      const text = await window.claude.complete({
-        system,
-        messages: [{role: 'user', content: 'Ngữ cảnh dữ liệu (JSON):\n' + JSON.stringify(context) + '\n\nCâu hỏi của người dùng: ' + q}],
-      });
+      const userContent = 'Ngữ cảnh dữ liệu (JSON):\n' + JSON.stringify(context) + '\n\nCâu hỏi của người dùng: ' + q;
+      let text;
+      if (window.claude && window.claude.complete) {
+        text = await window.claude.complete({ system, messages: [{role: 'user', content: userContent}] });
+      } else {
+        const GEMINI_API_KEY = 'AQ.Ab8RN6JihTi285QYEj8bnZ9D608ziGgcCAfUX6FDn1qaM2T-ew';
+        const r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + GEMINI_API_KEY, {
+          method: 'POST',
+          headers: {'content-type': 'application/json'},
+          body: JSON.stringify({
+            systemInstruction: {parts: [{text: system}]},
+            contents: [{role: 'user', parts: [{text: userContent}]}],
+          }),
+        });
+        const data = await r.json();
+        if (!r.ok) throw new Error(data.error?.message || 'API error');
+        text = data.candidates?.[0]?.content?.parts?.map(p => p.text).join('') || '';
+      }
       this.setState(s => ({aiChatMessages: [...s.aiChatMessages, {text: text || 'Xin lỗi, mình chưa có câu trả lời.', align: 'flex-start', bg: 'var(--color-neutral-100)', color: 'var(--color-text)'}], aiChatLoading: false}));
     } catch (e) {
-      this.setState(s => ({aiChatMessages: [...s.aiChatMessages, {text: 'Có lỗi khi kết nối trợ lý AI. Vui lòng thử lại.', align: 'flex-start', bg: 'var(--color-neutral-100)', color: 'var(--color-text)'}], aiChatLoading: false}));
+      this.setState(s => ({aiChatMessages: [...s.aiChatMessages, {text: 'Có lỗi khi kết nối trợ lý AI: ' + (e.message || 'không rõ nguyên nhân') + '. Vui lòng thử lại.', align: 'flex-start', bg: 'var(--color-neutral-100)', color: 'var(--color-text)'}], aiChatLoading: false}));
     }
   };
   logAudit(action, detail) {
@@ -19900,16 +19914,20 @@ class Component extends DCLogic {
       const bday = (this.state.profileExtra[s.name] || {}).birthday;
       if (!bday || this.state.employmentStatus[s.name] === 'resigned') return false;
       const now = new Date();
-      const nextMonthIdx = (now.getMonth() + 1) % 12;
-      const [, m] = bday.split('-').map(Number);
-      return (m - 1) === nextMonthIdx;
+      const [, m, d] = bday.split('-').map(Number);
+      let bdayDate = new Date(now.getFullYear(), m - 1, d);
+      const today0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      if (bdayDate < today0) bdayDate = new Date(now.getFullYear() + 1, m - 1, d);
+      const daysAway = Math.round((bdayDate - today0) / 86400000);
+      return daysAway <= 30;
     }).map(s => {
       const bday = (this.state.profileExtra[s.name] || {}).birthday;
       const now = new Date();
       const [, m, d] = bday.split('-').map(Number);
-      const nextMonthDate = new Date(now.getFullYear(), now.getMonth() + 1, 1);
-      const bdayDate = new Date(nextMonthDate.getFullYear(), m - 1, d);
-      const daysAway = Math.round((bdayDate - new Date(now.getFullYear(), now.getMonth(), now.getDate())) / 86400000);
+      let bdayDate = new Date(now.getFullYear(), m - 1, d);
+      const today0 = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      if (bdayDate < today0) bdayDate = new Date(now.getFullYear() + 1, m - 1, d);
+      const daysAway = Math.round((bdayDate - today0) / 86400000);
       return {name: s.name, department: s.department, daysAway, dateLabel: `${String(d).padStart(2, '0')}/${String(m).padStart(2, '0')}`};
     }).sort((a, b) => a.daysAway - b.daysAway);
     const hasUpcomingBirthdays = upcomingBirthdays.length > 0;
