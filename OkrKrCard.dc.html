@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<div style="background:#fff;border:1px solid #eee;border-radius:12px;margin-bottom:14px;box-shadow:0 1px 4px rgba(0,0,0,.05);overflow:hidden;">
+  <div style="display:flex;align-items:center;gap:16px;padding:16px 18px;cursor:pointer;border-left:5px solid {{ catColor }};flex-wrap:wrap;" onClick="{{ toggleOpen }}">
+    <div style="width:48px;height:48px;border-radius:10px;background:{{ catColor }};display:flex;align-items:center;justify-content:center;flex:none;">
+      <sc-if value="{{ isCatF }}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v10M9 9.5c0-1.4 1.3-2.5 3-2.5s3 .9 3 2c0 3-6 1.5-6 4.5 0 1.1 1.3 2 3 2s3-1.1 3-2.5"></path></svg></sc-if>
+      <sc-if value="{{ isCatC }}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></sc-if>
+      <sc-if value="{{ isCatIP }}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg></sc-if>
+      <sc-if value="{{ isCatLG }}" hint-placeholder-val="{{ false }}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></sc-if>
+    </div>
+    <div style="flex:1;min-width:180px;">
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="font-weight:800;font-size:14px;color:{{ catColor }};letter-spacing:.02em;text-transform:uppercase;">{{ objLabel }}</div>
+        <sc-if value="{{ statusBadgeLabel }}" hint-placeholder-val="{{ false }}">
+          <span style="background:var(--color-neutral-200);color:rgba(32,30,29,.65);font-size:10px;font-weight:800;padding:3px 8px;border-radius:999px;white-space:nowrap;">{{ statusBadgeLabel }}</span>
+        </sc-if>
+      </div>
+      <div style="font-size:11px;color:rgba(32,30,29,.55);margin-top:2px;">{{ objDesc }}</div>
+    </div>
+    <div style="text-align:center;min-width:60px;">
+      <div style="font-size:10px;color:rgba(32,30,29,.45);">Tỷ trọng</div>
+      <div style="font-family:Archivo;font-weight:800;font-size:15px;color:{{ catColor }};">{{ weight }}%</div>
+    </div>
+    <div style="min-width:130px;">
+      <div style="font-size:10px;color:rgba(32,30,29,.45);margin-bottom:4px;">Tiến độ</div>
+      <div style="display:flex;align-items:center;gap:8px;">
+        <div style="flex:1;height:8px;border-radius:4px;background:var(--color-neutral-200);"><div style="{{ progressBarStyle }}"></div></div>
+        <div style="font-size:12px;font-weight:700;color:{{ catColor }};white-space:nowrap;">{{ progressPct }}%</div>
+      </div>
+    </div>
+    <div style="text-align:center;min-width:50px;">
+      <div style="font-size:10px;color:rgba(32,30,29,.45);">Mục tiêu</div>
+      <div style="font-family:Archivo;font-weight:800;font-size:15px;">{{ krCount }}</div>
+    </div>
+    <div style="text-align:center;min-width:60px;">
+      <div style="font-size:10px;color:rgba(32,30,29,.45);">Hoàn thành</div>
+      <div style="font-family:Archivo;font-weight:800;font-size:15px;">{{ krDoneCount }}</div>
+    </div>
+    <sc-if value="{{ removeObjective }}" hint-placeholder-val="{{ false }}">
+      <button style="background:transparent;border:none;color:rgba(32,30,29,.4);font-size:14px;cursor:pointer;flex:none;" onClick="{{ removeObjective }}">✕</button>
+    </sc-if>
+    <button style="width:32px;height:32px;border-radius:8px;border:1px solid #ddd;background:#fff;display:flex;align-items:center;justify-content:center;flex:none;cursor:pointer;">
+      <span style="display:inline-flex;font-size:13px;transition:transform 0.2s;transform:{{ isOpen ? 'rotate(90deg)' : 'rotate(0deg)' }};">▸</span>
+    </button>
+  </div>
+
+  <sc-if value="{{ isOpen }}" hint-placeholder-val="{{ false }}">
+  <div style="border-top:1px solid #eee;background:var(--color-neutral-100);padding:10px 16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+    <div style="display:flex;align-items:center;gap:6px;font-size:11px;">
+      <span style="opacity:.7;">Tỷ trọng</span>
+      <input type="number" style="width:52px;min-height:26px;font-size:12px;border:1px solid #ddd;border-radius:5px;padding:3px 6px;" value="{{ weight }}" onChange="{{ setWeight }}" disabled="{{ krLocked }}">
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;font-size:11px;">
+      <span style="opacity:.7;">Điểm chuẩn</span>
+      <input type="number" style="width:52px;min-height:26px;font-size:12px;border:1px solid #ddd;border-radius:5px;padding:3px 6px;" value="{{ standardScore }}" disabled="{{ true }}">
+    </div>
+    <sc-if value="{{ showKrTable }}" hint-placeholder-val="{{ true }}">
+    <sc-if value="{{ addKr }}" hint-placeholder-val="{{ true }}">
+      <button style="background:{{ catColor }};color:#fff;border:none;font-family:Archivo;font-weight:700;font-size:11px;padding:7px 12px;cursor:pointer;white-space:nowrap;border-radius:6px;" onClick="{{ addKr }}">+ Thêm chỉ tiêu</button>
+    </sc-if>
+    <sc-if value="{{ canAddColumn }}" hint-placeholder-val="{{ false }}">
+      <button style="background:transparent;border:1px solid #ddd;color:var(--color-text);font-family:Archivo;font-weight:700;font-size:11px;padding:7px 12px;cursor:pointer;white-space:nowrap;border-radius:6px;" onClick="{{ openColumnForm }}">+ Thêm cột</button>
+    </sc-if>
+    <button style="background:transparent;border:1px solid #ddd;color:var(--color-text);font-family:Archivo;font-weight:700;font-size:11px;padding:7px 12px;cursor:pointer;white-space:nowrap;border-radius:6px;" onClick="{{ openPasteForm }}">Dán nhanh</button>
+    </sc-if>
+  </div>
+
+  <sc-if value="{{ weightSumWarning }}" hint-placeholder-val="{{ false }}">
+    <div style="background:var(--color-accent-100);color:var(--color-accent-700);font-size:12px;font-weight:700;padding:8px 16px;">{{ weightSumLabel }}</div>
+  </sc-if>
+
+  <sc-if value="{{ showKrTable }}" hint-placeholder-val="{{ true }}">
+  <sc-if value="{{ columnFormOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="background:var(--color-neutral-100);padding:12px 16px;display:flex;gap:8px;align-items:center;">
+      <input style="flex:1;max-width:260px;min-height:32px;font-size:12px;border:1px solid #ddd;padding:5px 8px;background:#fff;" placeholder="Tên cột mới" value="{{ columnDraftName }}" onChange="{{ setColumnDraftName }}">
+      <button style="background:var(--color-accent);color:#fff;border:none;font-family:Archivo;font-weight:700;font-size:11px;padding:7px 14px;cursor:pointer;" onClick="{{ saveColumn }}">Thêm</button>
+      <button style="background:transparent;border:1px solid #ddd;font-size:11px;padding:7px 14px;cursor:pointer;" onClick="{{ closeColumnForm }}">Huỷ</button>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ pasteFormOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="background:var(--color-neutral-100);padding:12px 16px;display:flex;flex-direction:column;gap:8px;">
+      <div style="font-size:11px;color:rgba(32,30,29,.6);">Dán nhiều dòng (mỗi dòng 1 chỉ tiêu, phân tách bằng Tab): Chỉ số đo lường · Tần suất · Loại · Tỷ trọng · Chỉ tiêu · Ngưỡng · Điểm chuẩn</div>
+      <textarea style="min-height:90px;font-size:12px;border:1px solid #ddd;padding:8px;background:#fff;font-family:inherit;" value="{{ pasteDraft }}" onChange="{{ setPasteDraft }}"></textarea>
+      <div style="display:flex;gap:8px;">
+        <button style="background:var(--color-accent);color:#fff;border:none;font-family:Archivo;font-weight:700;font-size:11px;padding:7px 14px;cursor:pointer;" onClick="{{ savePaste }}">Tạo chỉ tiêu</button>
+        <button style="background:transparent;border:1px solid #ddd;font-size:11px;padding:7px 14px;cursor:pointer;" onClick="{{ closePasteForm }}">Huỷ</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+    <table style="width:100%;min-width:1200px;border-collapse:collapse;font-size:11px;">
+      <thead>
+        <tr style="background:var(--color-neutral-100);">
+          <th></th>
+          <th style="text-align:left;padding:6px 8px;">Stt</th>
+          <th style="text-align:left;padding:6px 8px;min-width:200px;">Chỉ số đo lường</th>
+          <th style="padding:6px 8px;">Tần suất</th>
+          <th style="padding:6px 8px;">Loại</th>
+          <th style="padding:6px 8px;">Đơn vị</th>
+          <th style="padding:6px 8px;">Tỷ trọng</th>
+          <th style="padding:6px 8px;">Chỉ tiêu</th>
+          <th style="padding:6px 8px;">Ngưỡng</th>
+          <th style="padding:6px 8px;">Điểm chuẩn</th>
+          <sc-if value="{{ showEvalCols }}" hint-placeholder-val="{{ false }}">
+          <th style="padding:6px 8px;background:oklch(0.95 0.02 145);">Tự đánh giá</th>
+          <th style="padding:6px 8px;background:oklch(0.94 0.04 260);">TGĐ đánh giá</th>
+          </sc-if>
+          <th style="padding:6px 8px;">Kết quả</th>
+          <th style="text-align:left;padding:6px 8px;">Ghi chú</th>
+          <sc-for list="{{ customColumns }}" as="cc" hint-placeholder-count="0">
+            <th style="text-align:left;padding:6px 8px;min-width:100px;">{{ cc.name }}</th>
+          </sc-for>
+          <th style="text-align:left;padding:6px 8px;min-width:180px;">{{ roleColumnLabel }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <sc-if value="{{ hasNoKrs }}" hint-placeholder-val="{{ false }}">
+          <tr><td colspan="13" style="padding:14px 8px;color:rgba(32,30,29,.35);font-style:italic;">Chưa có chỉ tiêu nào.</td></tr>
+        </sc-if>
+        <sc-for list="{{ krs }}" as="k" hint-placeholder-count="2">
+          <tr style="border-top:1px solid #f2f2f2;vertical-align:top;">
+            <td style="padding:6px 8px;white-space:nowrap;">
+              <span draggable="true" onDragStart="{{ k.dragStart }}" onDragOver="{{ k.dragOver }}" onDrop="{{ k.drop }}" style="cursor:grab;color:rgba(32,30,29,.35);font-size:13px;padding:0 4px;">⠿</span>
+              <button style="border:none;background:transparent;color:rgba(32,30,29,.4);font-size:13px;cursor:pointer;" onClick="{{ k.remove }}" disabled="{{ k.disabled }}">✕</button>
+            </td>
+            <td style="padding:6px 8px;color:rgba(32,30,29,.5);">{{ k.stt }}</td>
+            <td style="padding:6px 8px;"><input style="width:100%;min-width:180px;min-height:28px;font-size:11px;border:1px solid #ddd;border-radius:5px;padding:3px 6px;" value="{{ k.title }}" onChange="{{ k.setTitle }}" disabled="{{ k.disabled }}"></td>
+            <td style="padding:6px 8px;">
+              <select style="min-height:28px;font-size:11px;border:1px solid #ddd;" value="{{ k.frequency }}" onChange="{{ k.setFrequency }}" disabled="{{ k.disabled }}">
+                <option value="Tháng">Tháng</option><option value="Quý">Quý</option><option value="6 tháng">6 tháng</option><option value="Năm">Năm</option>
+              </select>
+            </td>
+            <td style="padding:6px 8px;">
+              <select style="min-height:28px;font-size:11px;border:1px solid #ddd;" value="{{ k.direction }}" onChange="{{ k.setDirection }}" disabled="{{ k.disabled }}">
+                <option value="max">Càng lớn càng tốt</option><option value="min">Càng nhỏ càng tốt</option><option value="binary">Đạt/Không</option>
+              </select>
+            </td>
+            <td style="padding:6px 8px;">
+              <select style="min-height:28px;font-size:11px;border:1px solid #ddd;" value="{{ k.unit }}" onChange="{{ k.setUnit }}" disabled="{{ k.disabled }}">
+                <sc-for list="{{ k.unitOptions }}" as="u" hint-placeholder-count="6">
+                  <option value="{{ u }}">{{ u }}</option>
+                </sc-for>
+              </select>
+            </td>
+            <td style="padding:6px 8px;"><input type="number" style="width:52px;min-height:28px;font-size:11px;border:1px solid #ddd;border-radius:5px;padding:3px 4px;" value="{{ k.weight }}" onChange="{{ k.setWeight }}" disabled="{{ k.disabled }}"></td>
+            <td style="padding:6px 8px;"><input style="width:64px;min-height:28px;font-size:11px;border:1px solid #ddd;border-radius:5px;padding:3px 4px;" value="{{ k.target }}" onChange="{{ k.setTarget }}" disabled="{{ k.disabled }}"></td>
+            <td style="padding:6px 8px;"><input style="width:64px;min-height:28px;font-size:11px;border:1px solid #ddd;border-radius:5px;padding:3px 4px;" value="{{ k.threshold }}" onChange="{{ k.setThreshold }}" disabled="{{ k.disabled }}"></td>
+            <td style="padding:6px 8px;"><input type="number" style="width:52px;min-height:28px;font-size:11px;border:1px solid #ddd;border-radius:5px;padding:3px 4px;" value="{{ k.standardScore }}" disabled="{{ true }}"></td>
+            <sc-if value="{{ showEvalCols }}" hint-placeholder-val="{{ false }}">
+            <td style="padding:6px 8px;background:oklch(0.97 0.01 145);"><input type="number" style="width:60px;min-height:28px;font-size:11px;border:1px solid #ddd;border-radius:5px;padding:3px 4px;" value="{{ k.actualSelf }}" onChange="{{ k.setActualSelf }}" disabled="{{ !k.canEditSelf }}"></td>
+            <td style="padding:6px 8px;background:oklch(0.97 0.02 260);"><input type="number" style="width:60px;min-height:28px;font-size:11px;border:1px solid #ddd;border-radius:5px;padding:3px 4px;" value="{{ k.actualCeo }}" onChange="{{ k.setActualCeo }}" placeholder="—" disabled="{{ !k.canEditCeo }}"></td>
+            </sc-if>
+            <td style="padding:6px 8px;font-weight:800;text-align:center;">{{ k.krScoreLabel }}</td>
+            <td style="padding:6px 8px;"><input style="width:100%;min-width:120px;min-height:28px;font-size:11px;border:1px solid #ddd;border-radius:5px;padding:3px 6px;" value="{{ k.note }}" onChange="{{ k.setNote }}" disabled="{{ k.disabled }}"></td>
+            <sc-for list="{{ k.customCells }}" as="cell" hint-placeholder-count="0">
+              <td style="padding:6px 8px;"><input style="width:100%;min-width:90px;min-height:28px;font-size:11px;border:1px solid #ddd;border-radius:5px;padding:3px 6px;" value="{{ cell.value }}" onChange="{{ cell.setValue }}" disabled="{{ k.disabled }}"></td>
+            </sc-for>
+            <td style="padding:6px 8px;">
+              <sc-if value="{{ showRoleAssign }}" hint-placeholder-val="{{ true }}">
+              <div style="display:flex;flex-wrap:wrap;gap:4px;max-width:230px;max-height:52px;overflow-y:auto;align-content:flex-start;">
+                <sc-for list="{{ k.roleChips }}" as="rc" hint-placeholder-count="2">
+                  <button type="button" data-role="{{ rc.name }}" style="{{ rc.chipStyle }}" disabled="{{ k.disabled }}" onClick="{{ rc.toggle }}">{{ rc.name }}</button>
+                </sc-for>
+                <button style="{{ k.toggleAllRolesStyle }}" onClick="{{ k.toggleAllRoles }}" disabled="{{ k.disabled }}">{{ k.toggleAllRolesLabel }}</button>
+              </div>
+              </sc-if>
+              <sc-if value="{{ hideRoleAssign }}" hint-placeholder-val="{{ false }}">
+                <span style="font-size:11px;color:rgba(32,30,29,.6);font-weight:700;">{{ assignManagerName }}</span>
+              </sc-if>
+            </td>
+          </tr>
+        </sc-for>
+      </tbody>
+    </table>
+  </div>
+  </sc-if>
+  </sc-if>
+</div>
+
+</x-dc>
+</body>
+</html>
