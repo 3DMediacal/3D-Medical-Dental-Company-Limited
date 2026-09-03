@@ -15806,9 +15806,9 @@ class Component extends DCLogic {
         text = await window.claude.complete({ system, messages: [{role: 'user', content: userContent}] });
       } else {
         const GEMINI_API_KEY = 'AQ.Ab8RN6JihTi285QYEj8bnZ9D608ziGgcCAfUX6FDn1qaM2T-ew';
-        const r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + GEMINI_API_KEY, {
+        const r = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent', {
           method: 'POST',
-          headers: {'content-type': 'application/json'},
+          headers: {'content-type': 'application/json', 'x-goog-api-key': GEMINI_API_KEY},
           body: JSON.stringify({
             systemInstruction: {parts: [{text: system}]},
             contents: [{role: 'user', parts: [{text: userContent}]}],
