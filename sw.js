@@ -1,4 +1,4 @@
-const CACHE = 'hr-office-v2';
+const CACHE = 'hr-office-v-icon3d';
 const ASSETS = ['./manifest.json', './icons/icon-192.png', './icons/icon-512.png'];
 
 self.addEventListener('install', (e) => {
