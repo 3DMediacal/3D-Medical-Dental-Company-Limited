@@ -1,0 +1,76 @@
+﻿STT,Mã NV,Họ tên,Phòng ban,Bộ phận,Chức danh,Vai trò hệ thống,Email công ty,Điện thoại,Ngày vào làm,Trạng thái
+1,3D-09003,Lữ Thị Thu Lan,3D - Implant,Implant,Nha tá,employee,nhata01@ddd.vn,0983457400,2009-11-02,offline
+2,3D-15014,Trần Thị Thúy,3D - Implant,Implant,Nha tá,employee,nhata02@ddd.vn,0974883522,2015-05-13,offline
+3,3D-16023,Phạm Thị Ni Ni,3D - Implant,Implant,GĐ Ngành hàng Implant,manager,kd.implant01@ddd.vn,0909234177,2016-04-01,offline
+4,3D-19073,Ung Lê Duy Nhân,3D - Implant,Implant,Nhân viên Kinh doanh,employee,kd.implant07@ddd.vn,0356140390,2022-01-10,offline
+5,3D-19075,Phạm Văn Tín,3D - Implant,Implant,Nhân viên Kinh doanh,employee,kd.implant02@ddd.vn,0909691630,2019-05-21,offline
+6,3D-22111,Võ Thị Xuân Lộc,3D - Implant,Implant,Nhân viên Kinh doanh,employee,kd.implant09@ddd.vn,0357957889,2025-06-18,offline
+7,3D-22117,Trần Long Nhơn,3D - Implant,Implant,Nhân viên Kinh doanh,employee,kd.implant05@ddd.vn,0346 576 020,2025-09-22,offline
+8,3D-22120,Nguyễn Dương Linh,3D - Implant,Implant,Nhân viên Kinh doanh,employee,kd.vatlieu02@ddd.vn,0989267756,2025-10-06,offline
+9,3D-22121,Trương Thành Tâm,3D - Implant,Implant,Nhân viên Kinh doanh,employee,kd.vatlieu03@ddd.vn,0901845628,2025-10-09,offline
+10,3D-22130,Nguyễn Vinh Quang,3D - Implant,Implant,Phó GĐ Ngành hàng Implant,manager,dd.implant@ddd.vn,0854389328,2026-01-02,offline
+11,3D-22136,Nguyễn Thị Hiền Duyên,3D - Implant,Implant,Nhân viên hỗ trợ Kinh doanh,employee,sa.implant@ddd.vn,346000592,2026-06-15,offline
+12,3D-14011,Trương Đình Thuận,3D - Kênh Bệnh viện,Kênh BV,GĐ Ngành hàng Bệnh viện,manager,thuan.truong@ddd.vn,0909112990,2014-11-12,offline
+13,3D-16022,Phạm Hoàng Trung,3D - Kênh Bệnh viện,Kênh BV,Nhân viên Kinh doanh,employee,kd.kbv01@ddd.vn,0938520527,2016-04-13,offline
+14,3D-22005,Huỳnh Ngọc Kim Phụng,3D - Kênh Bệnh viện,Kênh BV,Nhân viên Kinh doanh,employee,kd.kbv02@ddd.vn,0377416504,2022-03-01,offline
+15,3D-22083,Nguyễn Quang Đại,3D - Kênh Bệnh viện,Kênh BV,Nhân viên Kinh doanh,employee,kd.kbv03@ddd.vn,0977894113,2023-10-02,offline
+16,3D-22118,Võ Thị Hồng Yến,3D - Kênh Bệnh viện,Kênh BV,Nhân viên Kinh doanh,employee,kd.kbv04@ddd.vn,0933511074,2025-10-06,offline
+17,3D-08000,Hồ Đắc Thắng,Ban giám đốc,Hội sở,TGĐ,director,thang.ho@ddd.vn,0939112333,2008-11-01,offline
+18,3D-22114,Nguyễn Thị Khánh Huyền,Ban giám đốc,Hội sở,Trợ lý TGĐ,employee,troly@ddd.vn,0766699838,2025-07-23,offline
+19,MV004,Tạ Phương Diễm,Ban giám đốc,Ban giám đốc,Hội đồng thành viên Maxdent,manager,diem.ta@ddd.vn,,,offline
+20,3D-22132,Nguyễn Thị Phương Minh,Cố vấn chuyên môn,Cố vấn chuyên môn,Bác sĩ chuyên môn,manager,clinical.advisor@ddd.vn,076 5155569,2026-03-26,offline
+21,MV007,Trần Đoàn Đạo,Cố vấn chuyên môn,Cố vấn chuyên môn,Bác sĩ Tư vấn,employee,,0913900360,2022-10-24,offline
+22,3D-14010,Trần Phan Diễm Trang,Hành chính Nhân sự,Hành chính & Kỹ thuật,Nhân viên Tạp vụ,employee,tapvu@ddd.vn,0886708067,2014-10-05,offline
+23,3D-16018,Dương Đắc Huy,Hành chính Nhân sự,Hành chính & Kỹ thuật,Nhân viên Kỹ thuật Chụp CT,employee,ct@ddd.vn,0769671394,2016-06-02,offline
+24,3D-20091,Đỗ Văn Bình,Hành chính Nhân sự,Hành chính & Kỹ thuật,TBP Hành chính Kiêm IT,teamlead,it@ddd.vn,0969579057,2020-02-01,offline
+25,3D-22069,Phan Văn Tô Ni,Hành chính Nhân sự,Tổng quát,Trưởng phòng kỹ thuật,employee,kythuat01@ddd.vn,0963729915,2023-04-01,offline
+26,3D-22105,Nguyễn Ngọc Thùy Trinh,Hành chính Nhân sự,Hành chính & Kỹ thuật,Nhân viên Lễ tân,employee,letan@ddd.vn,0896619099,2025-04-24,offline
+27,3D-22135,Bùi Ngọc Bích Lê Thảo,Hành chính Nhân sự,Nhân sự,Nhân sự tổng hợp,employee,cb@ddd.vn,0344624318,,offline
+28,3D-22141,Lý Gia Hải,Hành chính Nhân sự,Hành chính & Kỹ thuật,Nhân viên kỹ thuật,employee,kythuat@ddd.vn,342050840,2026-08-04,offline
+29,3D-22143,Nguyễn Lê Tuấn Minh,Hành chính Nhân sự,Hành chính & Kỹ thuật,GĐ Hành chính Nhân sự,manager,hr.manager@ddd.vn,903553126,2026-08-10,offline
+30,3D-17028,Lương Vũ Thành Đạt,Kho,Kho,Thủ kho,teamlead,thukho@ddd.vn,0764656017,2017-03-09,offline
+31,3D-18043,Trần Trọng Nhân,Kho,Kho,Nhân viên Kho,employee,kho01@ddd.vn,937054642,2026-08-10,offline
+32,3D-22021,Đào Thế Kiệt,Kho,Kho,Nhân viên Kho,employee,kho03@ddd.vn,0966663318,2022-05-04,offline
+33,3D-22063,Hoàng Thiên Ân,Kho,Kho,Nhân viên Kho,employee,kho02@ddd.vn,0934488132,2023-03-01,offline
+34,3D-22097,Nguyễn Tấn Vàng,Kho,Kho,Nhân viên Kho,employee,saleadmin06@ddd.vn,0336537076,2024-11-07,offline
+35,3D-22092,Nguyễn Thị Mơ,Marketing,Marketing,Nhân viên Marketing (Thiết kế Web),employee,mo.nguyen@ddd.vn,0971522966,2024-07-29,offline
+36,3D-22102,Nguyễn Hữu Phúc,Marketing,Marketing,Nhân viên Thiết kế,employee,phuc.nguyen@ddd.vn,0817474795,2025-03-14,offline
+37,3D-22103,Trần Thị Thu Ba,Marketing,Marketing,Nhân viên Marketing,employee,ba.tran@ddd.vn,0363203545,2025-04-11,offline
+38,3D-22109,Trần Hoàng Thịnh,Marketing,Marketing,Trưởng phòng Marketing,manager,thinh.tran@ddd.vn,0932040733,2025-05-26,offline
+39,3D-22133,Trần Thị Trang,Marketing,Marketing,Nhân viên Marketing,employee,trang.tran@ddd.vn,0776934096,2026-04-06,offline
+40,4D-22050,Phạm Đức Hải Sơn,Marketing,Back Office,Nhân viên Marketing,employee,son.pham@maxdent.vn,0868295998,2026-03-23,offline
+41,4D-22052,Đồng Thị Ngọc Yến,Marketing,Back Office,Nhân viên Marketing,employee,yen.doan@maxdent.vn,0836826924,2026-05-25,offline
+42,4D-22048,Trần Trọng Nghĩa,Maxdent - Cấy ghép,Công ty MXD,MD - GĐ Ngành hàng Cấy ghép,manager,nghia.tran@maxdent.vn,0965813685,2025-12-15,offline
+43,4D-22053,Võ Đặng Sang,Maxdent - Cấy ghép,Công ty MXD,Nhân viên Kinh doanh,employee,kd.vatlieu07@ddd.vn,0973 90 4400,2026-06-01,offline
+44,4D-16025,Hoàng Minh Tân,Maxdent - Chỉnh nha,Công ty MXD,MD - GĐ Ngành hàng Chỉnh nha,manager,tan.hoang@maxdent.vn,0985790980,2016-11-16,offline
+45,4D-18064,Trần Hồng Ngọc,Maxdent - Chỉnh nha,Công ty MXD,Nhân viên Kinh doanh,employee,kt.banhang01@ddd.vn,0914813831,2018-07-16,offline
+46,4D-19085,Dương Thành Phúc,Maxdent - Chỉnh nha,Công ty MXD,Nhân viên Kinh doanh,employee,kd.implant01@maxdent.vn,0778784223,2019-07-01,offline
+47,4D-21105,Đào Đức Tùng,Maxdent - Chỉnh nha,Công ty MXD,Nhân viên Kinh doanh,employee,kd.implant10@maxdent.vn,0839553289,2021-05-04,offline
+48,4D-22041,Nguyễn Văn Tiền,Maxdent - Chỉnh nha,Công ty MXD,Nhân viên Kinh doanh,employee,kd.implant02@maxdent.vn,0393639234,2022-10-03,offline
+49,4D-22047,Trịnh Kim Muỗi,Maxdent - Chỉnh nha,Công ty MXD,Nhân viên Kinh doanh,employee,kd.chinhnha02@maxdent.vn,0988996383,2022-03-14,offline
+50,3D-22035,Bùi Lê Xuân Quí,Quản lý Kinh doanh,Quản lý Kinh doanh,Quản lý Kinh doanh,manager,qui.bui@ddd.vn,0966437028,2024-02-19,offline
+51,3D-17031,Nguyễn Minh Tính,Sale Admin,Sale Admin,Nhân viên Giao nhận,employee,giaonhan01@ddd.vn,0981644231,2017-05-15,offline
+52,3D-18051,Trần Lê Việt,Sale Admin,Sales Admin,Nhân viên Giao nhận,employee,giaonhan02@ddd.vn,0906368 922,2018-10-01,offline
+53,3D-20098,Nguyễn Phương Khanh,Sale Admin,Sale Admin,Nhân viên Sale Admin,employee,saleadmin03@ddd.vn,0931887543,2020-11-02,offline
+54,3D-22012,Lê Hoàng Dương,Sale Admin,Sale Admin,Nhân viên Điều phối,employee,saleadmin02@ddd.vn,0936445373,2022-04-12,offline
+55,3D-22022,Lương Nhật Trường,Sale Admin,Sale Admin,TBP Sale Admin,manager,truong.luong@ddd.vn,0909690715,2022-05-16,offline
+56,3D-22037,Nguyễn Hoàng Phương Trinh,Sale Admin,Sale Admin,Nhân viên Sale Admin,employee,saleadmin04@ddd.vn,0786948828,2022-09-05,offline
+57,3D-22065,Trần Thị Ngọc Đức,Sale Admin,Sale Admin,Nhân viên Sale Admin,employee,saleadmin01@ddd.vn,0933399702,2023-03-10,offline
+58,4D-22043,Nguyễn Hương Trà,Sale Admin,Back Office,Nhân viên Sale Admin,employee,saleadmin01@maxdent.vn,987786761,2026-06-15,offline
+59,3D-20096,Nguyễn Thị Ánh Hà,Tài chính Kế toán,Kế toán,Kế toán kho (kiêm thủ quỹ),employee,kt.kho@ddd.vn,0964399224,2020-10-01,offline
+60,3D-22002,Nguyễn Thị Huế Thanh,Tài chính Kế toán,Kế toán,Kế toán Tổng hợp,teamlead,kt.tonghop@ddd.vn,0907843225,2022-03-01,offline
+61,3D-22008,Nguyễn Phạm Thanh Hương,Tài chính Kế toán,Kế toán,Kế toán Bán hàng,employee,kt.banhang02@ddd.vn,0389652299,2022-03-21,offline
+62,3D-22013,Nguyễn Ngọc Minh Nguyệt,Tài chính Kế toán,Kế toán,Kế toán Công nợ,employee,kt.congno03@ddd.vn,0386745436,2022-03-31,offline
+63,3D-22084,Trần Thị Kim Dung,Tài chính Kế toán,Kế toán,GĐ Tài chính Kế toán,manager,cfo@ddd.vn,0986970030,2023-11-09,offline
+64,3D-22125,Trần Hồng Ngọc,Tài chính Kế toán,Kế toán,Kế toán Công nợ,employee,kt.banhang01@ddd.vn,0384678168,2025-11-25,offline
+65,3D-22126,Ngô Kim Yến,Tài chính Kế toán,Kế toán,Kế toán Công nợ,employee,kt.congno01@ddd.vn,0936439708,2025-11-27,offline
+66,3D-22137,Nguyễn Thị Nguyệt Thạnh,Tài chính Kế toán,Kế toán,Kế toán Thuế,employee,kt.thue@ddd.vn,937995935,2026-06-22,offline
+67,3D-22142,Huỳnh Thị Cẩm Tuyên,Tài chính Kế toán,Kế toán,Cộng tác viên Kế toán,employee,kt.banhang02@ddd.vn,853191104,2026-08-05,offline
+68,3D-10004,Vũ Đức Hiếu,VPĐD HN,Khối KD,Phó TGĐ,manager,hieu.vu@ddd.vn,0906616467,2018-11-01,offline
+69,3D-13008,Trần Thanh Hiền,VPĐD HN,Kênh BV,Nhân viên Kinh doanh,employee,kd.kbv10@ddd.vn,0936496222,2013-09-16,offline
+70,3D-18061,Lê Việt Hòa,VPĐD HN,Implant,Nhân viên Kinh doanh,employee,kd.implant10@ddd.vn,0918362112,2018-04-09,offline
+71,3D-22075,Nguyễn Minh Hưng,VPĐD HN,Implant,Nhân viên Kinh doanh,employee,kd.implant12@ddd.vn,0988524138,2023-06-01,offline
+72,3D-22099,Lê Thị Ngọc Hà,VPĐD HN,Kế toán,Nhân viên Kế toán kiêm thủ quỹ,employee,kt.tonghophn@ddd.vn,0946382868,2025-02-05,offline
+73,3D-22122,Trần Việt Hà,VPĐD HN,Kho,Kho,employee,kho10@ddd.vn,0945594373,2025-10-27,offline
+74,3D-19083,Lê Đặng Trà Vi,Xuất nhập khẩu,XNK,Chuyên viên Xuất nhập khẩu,employee,xnk@ddd.vn,0932040132,2019-06-17,offline
+75,3D-22096,Nguyễn Thị Ái Liên,Xuất nhập khẩu,XNK,TBP Cung ứng - Xuất nhập khẩu,manager,xnk02@ddd.vn,0388633936,2024-10-01,offline
